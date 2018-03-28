@@ -141,8 +141,8 @@ public class FirstRatings {
      */
     public void testLoadMovies() {
         
-        ArrayList<Movie> movielist = loadMovies("data/ratedmovies_short.csv"); //5
-        //ArrayList<Movie> movielist = loadMovies("data/ratedmoviesfull.csv"); //3143
+        //ArrayList<Movie> movielist = loadMovies("data/ratedmovies_short.csv"); //5
+        ArrayList<Movie> movielist = loadMovies("data/ratedmoviesfull.csv"); //3143
 
         System.out.println("Number of Movies: " + movielist.size());
         for (Movie m : movielist) {
@@ -165,6 +165,7 @@ public class FirstRatings {
             System.out.println("Max Number of movies by any given director: "+ num);
             ArrayList<String> directors = maxMap.get(num);
             System.out.println("Number of directors who have directed that many movies: " + directors.size());
+            System.out.println("Names of directors who have directed that many movies: " + directors);
         }
         /* 
          * In the file ratedmovies_short.csv 
@@ -318,8 +319,8 @@ public class FirstRatings {
      * testLoadRaters
      */
     public void testLoadRaters() {
-        ArrayList<Rater> raterlist = loadRaters("data/ratings_short.csv");
-        //ArrayList<Rater> raterlist = loadRaters("data/ratings.csv");
+        //ArrayList<Rater> raterlist = loadRaters("data/ratings_short.csv");
+        ArrayList<Rater> raterlist = loadRaters("data/ratings.csv");
         System.out.println("Total number of raters: " + raterlist.size());
         
         // Then for each rater, print rater’s ID and number of ratings on one line, 
@@ -342,7 +343,8 @@ public class FirstRatings {
         // find the number of ratings for a particular rater.
         // For example, if you run this code on the rater whose rater_id is 2 
         // for the file ratings_short.csv, you will see they have three ratings. */
-        int num = numRatingsbyRater(raterlist, "2");
+        //int num = numRatingsbyRater(raterlist, "2");
+        int num = numRatingsbyRater(raterlist, "193");
         System.out.println("Number of ratings by the given rater: " + num);
         
         // find the maximum number of ratings by any rater. 
