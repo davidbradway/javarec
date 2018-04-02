@@ -11,7 +11,7 @@ public class FirstRatings {
     /**
      * loadMovies
      */
-    private ArrayList<Movie> loadMovies(String filename) {
+    public ArrayList<Movie> loadMovies(String filename) {
         FileResource fr = new FileResource(filename);
         
         ArrayList<Movie> movielist = new ArrayList<Movie>();
@@ -33,7 +33,7 @@ public class FirstRatings {
         return movielist;
     }
     
-    private ArrayList<Movie> filterByGenre(ArrayList<Movie> movielist, String genre) {
+    public ArrayList<Movie> filterByGenre(ArrayList<Movie> movielist, String genre) {
 
         ArrayList<Movie> filteredlist = new ArrayList<Movie>();
         for (Movie m : movielist) {
@@ -47,7 +47,7 @@ public class FirstRatings {
         return filteredlist;
     }
 
-    private ArrayList<Movie> filterByLengthLonger(ArrayList<Movie> movielist, int minlength) {
+    public ArrayList<Movie> filterByLengthLonger(ArrayList<Movie> movielist, int minlength) {
 
         ArrayList<Movie> filteredlist = new ArrayList<Movie>();
         for (Movie m : movielist) {
@@ -66,7 +66,7 @@ public class FirstRatings {
      * and who the directors are that directed that many movies. 
      * Remember that some movies may have more than one director.     
      */
-    private HashMap<Integer, ArrayList<String>> countDirectors(ArrayList<Movie> movielist){
+    public HashMap<Integer, ArrayList<String>> countDirectors(ArrayList<Movie> movielist){
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         
         int maxcount = 0;
@@ -177,7 +177,7 @@ public class FirstRatings {
     /**
      * loadRaters
      */
-    private ArrayList<Rater> loadRaters(String filename) {
+    public ArrayList<Rater> loadRaters(String filename) {
         //process every record from the CSV file whose name is filename,
 
         FileResource fr = new FileResource(filename);
@@ -232,7 +232,7 @@ public class FirstRatings {
     /**
      * Find number of ratings by a rater
      */
-    private int numRatingsbyRater(ArrayList<Rater> raterlist, String id) {
+    public int numRatingsbyRater(ArrayList<Rater> raterlist, String id) {
         // check the whole list if necessary
         for (Rater r : raterlist) {
             // for each Rater, check the ID
@@ -248,7 +248,7 @@ public class FirstRatings {
     /**
      * Max num ratings
      */
-    private HashMap<Integer, ArrayList<String>> maxNumRatings(ArrayList<Rater> raterlist) {
+    public HashMap<Integer, ArrayList<String>> maxNumRatings(ArrayList<Rater> raterlist) {
         /* find the maximum number of ratings by any rater. 
          * Determine how many raters have this maximum number of ratings 
          * and who those raters are. */
@@ -280,7 +280,7 @@ public class FirstRatings {
     /**
      * Find all the raters of a given movie
      */
-    private ArrayList<String> getRatersByMovie(ArrayList<Rater> raterlist, String movie_id) {
+    public ArrayList<String> getRatersByMovie(ArrayList<Rater> raterlist, String movie_id) {
         ArrayList<String> raters = new ArrayList<String>();
         
         // iterate through entire raterlist
@@ -298,7 +298,7 @@ public class FirstRatings {
     /**
      * Unique movies by all     raters
      */
-    private ArrayList<String> uniqueMovies(ArrayList<Rater> raterlist) {
+    public ArrayList<String> uniqueMovies(ArrayList<Rater> raterlist) {
         ArrayList<String> movies = new ArrayList<String>();
         
         // iterate through entire raterlist
