@@ -18,7 +18,6 @@ public class MovieDatabase {
             loadMovies("data/ratedmoviesfull.csv");
         }
     }	
-
 	
     private static void loadMovies(String filename) {
         FirstRatings fr = new FirstRatings();
@@ -88,5 +87,4 @@ public class MovieDatabase {
         
         return list;
     }
-
 }
