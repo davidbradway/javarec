@@ -1,4 +1,3 @@
-
 /**
  * Write a description of EfficientRater here.
  * 
@@ -6,6 +5,7 @@
  * @version (a version number or a date)
  */
 import java.util.*;
+
 public class EfficientRater implements Rater{
     private String myID;
     private HashMap<String,Rating> myRatings;
@@ -28,13 +28,12 @@ public class EfficientRater implements Rater{
     }
 
     public double getRating(String item) {
-        for(int k=0; k < myRatings.size(); k++){
-            if (myRatings.get(k).getItem().equals(item)){
-                return myRatings.get(k).getValue();
-            }
+        if (hasRating(item)) {
+            return myRatings.get(item).getValue();
         }
-        
-        return -1;
+        else {
+            return -1;
+        }
     }
 
     public int numRatings() {
@@ -43,10 +42,10 @@ public class EfficientRater implements Rater{
 
     public ArrayList<String> getItemsRated() {
         ArrayList<String> list = new ArrayList<String>();
-        for(int k=0; k < myRatings.size(); k++){
-            list.add(myRatings.get(k).getItem());
-        }
-        
+        for (String item : myRatings.keySet()) {
+            // process each key in turn 
+            list.add(item);
+        }        
         return list;
     }
 }

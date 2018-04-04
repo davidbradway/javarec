@@ -216,7 +216,8 @@ public class FirstRatings {
             }
             //if not found in loop, then rater_id is not yet in raterlist
             if (notFound) {
-                Rater r = new PlainRater(rater_id);
+                //Rater r = new PlainRater(rater_id);
+                Rater r = new EfficientRater(rater_id);
                 r.addRating(movie_id, rating);
                 raterlist.add(r);
             }
