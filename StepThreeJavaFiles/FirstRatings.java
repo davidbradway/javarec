@@ -134,7 +134,7 @@ public class FirstRatings {
         HashMap<Integer, ArrayList<String>> maxMap = new HashMap<Integer, ArrayList<String>>();
         maxMap.put(maxcount, directorsmax);
         return maxMap;
-    }    
+    }
     
     /**
      * testLoadMovies 

@@ -49,16 +49,18 @@ public class ThirdRatings {
         // find the average rating for every movie rated by at least minimalRaters raters.
         // The method getAverageRatings should return an ArrayList of all the Rating objects
         // for movies that have at least the minimal number of raters supplying a rating.
-        
+
+        return getAverageRatingsByFilter(minimalRaters, new TrueFilter());
+    }
+
+    public ArrayList<Rating> getAverageRatingsByFilter(int minimalRaters, Filter filterCriteria) {
         ArrayList<Rating> avgRatings = new ArrayList<Rating>();
         
         /**
-         * get all the movies from the MovieDatabase class and store them in an ArrayList 
+         * get movies from the MovieDatabase class and store them in an ArrayList 
          * of movie IDs. 
-         * Thus, you will need to modify getAverageRatings to call MovieDatabase with a 
-         * filter, and in this case you can use the TrueFilter to get every movie.
          */
-        ArrayList<String> movies = MovieDatabase.filterBy(new TrueFilter());
+        ArrayList<String> movies = MovieDatabase.filterBy(filterCriteria);
         
         for (String m : movies) {
             double avg = getAverageByID(m, minimalRaters);
@@ -70,7 +72,7 @@ public class ThirdRatings {
         }
         return avgRatings;
     }
-            
+    
     public int getRaterSize() {
         // return number of movies read in and stored in the ArrayList of type Movie.
         return myRaters.size();
