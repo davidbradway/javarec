@@ -17,8 +17,17 @@ public class MovieDatabase {
             ourMovies = new HashMap<String,Movie>();
             loadMovies("data/ratedmoviesfull.csv");
         }
-    }	
-	
+    }
+
+    public static void reinitialize(String moviefile) {
+        ourMovies = new HashMap<String,Movie>();
+        loadMovies("data/" + moviefile);
+    }
+
+    private static void reinitialize() {
+        reinitialize("ratedmoviesfull.csv");
+    }
+
     private static void loadMovies(String filename) {
         FirstRatings fr = new FirstRatings();
         ArrayList<Movie> list = fr.loadMovies(filename);

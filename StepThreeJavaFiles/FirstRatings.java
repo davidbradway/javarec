@@ -75,25 +75,11 @@ public class FirstRatings {
         // iterate through entire movielist
         for (Movie m : movielist) {
             // get Directors
-            String d = m.getDirector();
-            int start = 0;
-            int end;
-            boolean notAtEnd = true;
+            String myDirectors = m.getDirector();
 
-            // Want to split directors string on commas.
-            // Find the first comma (or -1 if none)
-            end = d.indexOf(",", start);
-            
-            while(end != -1 || notAtEnd) {
-                // if there are no more commas, still add the last director
-                // and make the flag false so we don't search again
-                if (end == -1){
-                    end = d.length();
-                    notAtEnd = false;
-                }
-                
-                String director = d.substring(start, end).trim();
-
+            // Split directors String on commas
+            String directorarray[] = myDirectors.split(",");
+            for (String director: directorarray){
                 int count = 0;
 
                 // for each director check if HashMap containsKey
@@ -124,10 +110,6 @@ public class FirstRatings {
                     // add director to ArrayList<String> 
                     directorsmax.add(director);
                 }
-                
-                // start searching after the last comma we found
-                start = end + 1;
-                end = d.indexOf(",", start);
             }
         }        
 
