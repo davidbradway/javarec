@@ -156,8 +156,7 @@ public class MovieRunnerWithFilters {
         // read data for 5 movies
         // 1 movie matched
         // 8.25 2013 Her
-        // Drama, Romance, Sci-Fi
-        
+        // Drama, Romance, Sci-Fi        
     }
 
     public void printAverageRatingsByDirectorsAndMinutes () {

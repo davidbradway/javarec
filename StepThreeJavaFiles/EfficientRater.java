@@ -31,9 +31,7 @@ public class EfficientRater implements Rater{
         if (hasRating(item)) {
             return myRatings.get(item).getValue();
         }
-        else {
-            return -1;
-        }
+        return -1;
     }
 
     public int numRatings() {
